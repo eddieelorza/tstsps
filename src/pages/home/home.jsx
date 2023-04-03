@@ -6,7 +6,7 @@ import Categories from '../../components/categories/categories.jsx'
 import Slider from '../../components/slider/slider.jsx'
 import productApi from '../../api/api.js'
 import { onAuthStateChanged } from "firebase/auth";
-import app,{ auth} from '../../firebase.js';
+import { auth} from '../../firebase.js';
 
 
 
@@ -80,8 +80,7 @@ const CardList = () => {
         }
       }, [isLogged]);
 
-      console.log("isLogged", isLogged)
-        console.log("userData", userData)
+
     
         const addToCart = async(product) => {
             const user = { ...userData };
@@ -97,11 +96,6 @@ const CardList = () => {
             localStorage.setItem("token", JSON.stringify(userData));
 
         };
-
-        console.log("cart", cart)
-        console.log("userData", userData)
-
-    
 
 
 
